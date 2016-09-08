@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app was built on https://github.com/toptal/chewy_example
 
-Things you may want to cover:
+Known differences:
 
-* Ruby version
+* Ruby version (using rbenv instead of rvm) 2.3.0
 
-* System dependencies
+* System dependencies - see `Gemfile` for gems that were added
 
-* Configuration
+* Configuration - no change
 
-* Database creation
+* Database creation - no change
 
-* Database initialization
+* Database initialization - no change
 
-* How to run the test suite
+* How to run the test suite - the RSpec tests have not been copied over yet
 
-* Services (job queues, cache servers, search engines, etc.)
+* Services (job queues, cache servers, search engines, etc.) - no change
 
-* Deployment instructions
+* Deployment instructions - no change
 
 * ...
