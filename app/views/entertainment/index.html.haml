@@ -1,0 +1,38 @@
+= form_for @search, as: :search, url: entertainment_index_path, method: :get do |f|
+  %p
+    = f.label :query
+    = f.text_field :query
+  %p
+    = f.label :author_id
+    = f.select :author_id, Dude.all.map { |d| [d.name, d.id] }, include_blank: true
+  %p
+    = f.label :min_year
+    = f.text_field :min_year
+  %p
+    = f.label :max_year
+    = f.text_field :max_year
+  %p
+    = f.label :tag_list
+    = f.text_field :tag_list
+  %p
+    = f.label :sort
+    = f.select :sort, EntertainmentSearch.sort_values
+  %p
+    = f.submit
+
+- if @entertainments.any?
+  %dl
+    - @entertainments.each do |entertainment|
+      %dt
+        %h1= entertainment.title
+        %strong= entertainment.class
+      %dd
+        %p= entertainment.year
+        %p= entertainment.description
+        %p= entertainment.tag_list
+  = paginate @entertainments
+- else
+  - if @error
+    = @error
+  - else
+    Nothing to see here

@@ -13,6 +13,10 @@ gem 'kaminari'
 gem 'haml'
 gem 'sass-rails'
 gem 'uglifier'
+gem 'jquery-rails'          # jQuery as the JavaScript library
+gem 'jquery-ui-rails'       # jQuery UI for autocomplete functionality
+gem 'turbolinks'
+
 gem 'coffee-rails'
 
 group :development, :test do
@@ -21,4 +25,5 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'ffaker'
+  gem 'pry-rails'
 end
