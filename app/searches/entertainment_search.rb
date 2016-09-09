@@ -9,9 +9,8 @@ class EntertainmentSearch
   attribute :author_id, type: Integer
   attribute :min_year, type: Integer
   attribute :max_year, type: Integer
-  attribute(:tags, mode: :arrayed, type: String)
-#            normalize:
-#            ->(value) { value.present? ? value.reject(&:blank?) : [] })
+  attribute(:tags, mode: :arrayed, type: Array,
+            normalize: ->(value) { (value || []).reject(&:blank?) })
   attribute :sort, type: String, enum: %w(title year relevance),
             default_blank: 'relevance'
 
